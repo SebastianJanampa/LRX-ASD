@@ -1,10 +1,10 @@
 # LRX-ASD: Lightweight Active Speaker Detection
 
-Official code for the ICIP 2026 paper:
+Official code for the ASILOMAR 2026 paper:
 
 > **Active Speaker Detection in Crowded Collaborative Classroom Environments**<br>
 > Sebastian Janampa, Wenjing Shi, Sylvia Celedon-Pattichis, Marios Pattichis<br>
-> *IEEE International Conference on Image Processing (ICIP), 2026* (to appear)<br>
+> *Asilomar Conference on Signals, Systems, and Computers, 2026* (to appear)<br>
 > [[paper]](TODO) [[weights]](https://github.com/SebastianJanampa/LRX-ASD/releases/tag/models_weight)
 
 Active speaker detection (ASD) decides, for every frame of a face track, whether
