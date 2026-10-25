@@ -1,0 +1,73 @@
+# ---------------------------------------------------------------
+# Third-party / unrelated code
+# ---------------------------------------------------------------
+mmpose/
+
+# ---------------------------------------------------------------
+# Experimental models that are not part of the paper
+# ---------------------------------------------------------------
+pyasd/models/asder/
+pyasd/models/lrasdv2/
+
+# ---------------------------------------------------------------
+# Weights & experiment outputs (released via GitHub Releases)
+# ---------------------------------------------------------------
+*.model
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.engine
+outputs/
+feature_analysis*/
+
+# ---------------------------------------------------------------
+# One-off / private-data scripts
+# ---------------------------------------------------------------
+/aolme_test.py
+/load_weights.py
+/dataset_example.py
+/feature_viz.py
+batch_*_*.png
+
+# Local weights folder (weights are distributed via the GitHub release)
+weights/
+
+# ---------------------------------------------------------------
+# Datasets (prepared by the user, see README)
+# ---------------------------------------------------------------
+AVADataPath/
+colDataPath/
+
+# ---------------------------------------------------------------
+# Python / packaging
+# ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------
+# IDE / OS
+# ---------------------------------------------------------------
+.idea/
+.vscode/
+.DS_Store
+
+# ---------------------------------------------------------------
+# Old entry scripts (replaced by tools/)
+# ---------------------------------------------------------------
+/train.py
+/columbia_eval.py
+
+# ---------------------------------------------------------------
+# Generated visualizations (tools/pca_features.py)
+# ---------------------------------------------------------------
+*_pcas/
+reference_images_pca/

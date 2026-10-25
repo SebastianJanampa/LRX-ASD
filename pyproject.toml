@@ -1,0 +1,108 @@
+# pyasd / LRX-ASD - Apache-2.0 license
+#
+# Packaging configuration of the `pyasd` library (LRX-ASD and the bundled
+# active speaker detection baselines).
+
+# 1. Build System Configuration
+# Tells pip which tool to use to build your package.
+[build-system]
+requires = ["setuptools>=70.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# # 2. Project Metadata (PEP 621)
+# This is the core information about your library. settings
+[project]
+name = "pyasd"
+version = "0.0.1"
+description = "LRX-ASD: lightweight audio-visual active speaker detection (plus TalkNet, Light-ASD and LR-ASD baselines)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { "text" = "APACHE-2.0" }
+keywords = ["deep-learning", "computer-vision", "active-speaker-detection", "audio-visual"]
+authors = [
+    { name = "Sebastian Janampa", email = "rjsebastian001@gmail.com" },
+]
+maintainers = [
+    { name = "Sebastian Janampa ", email = "rjsebastian001@gmail.com" },
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License", # Or MIT, etc.
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Operating System :: POSIX :: Linux",
+]
+
+# 3. Project Dependencies
+# These are the packages your library needs to run.
+dependencies = [
+    "torch>=2.0.1",
+    "torchvision>=0.15.2",
+    "numpy>=1.23.0",
+    "matplotlib",
+    "scikit-learn",
+    "opencv-python",
+    "pandas",
+    "scipy",
+    "tqdm",
+    "python_speech_features",
+]
+
+# 4. Optional Dependencies (for development, testing, etc.)
+# Installed with: pip install .[dev]
+[project.optional-dependencies]
+dev =  [
+    "pytest",
+    "ruff",
+    "black",
+    "mypy",
+    "pre-commit",
+    "calflops",
+    "transformers",
+]
+loggers = [
+    "tensorboard",
+    "wandb",
+]
+export = []
+
+# 5. Project URLs
+# Links that will appear on the PyPI project page.
+[project.urls]
+#"Homepage" = ""
+#"Documentation" = ""
+#"Bug Tracker" = ""
+
+
+# --- Tool Configurations ---
+[tool.setuptools.packages.find]
+include = ["pyasd*"]
+exclude = ["pyasd.models.asder*", "pyasd.models.lrasdv2*"]
+
+[tool.ruff]
+# Configuration for the Ruff linter/formatter.
+line-length = 88
+# Select rules: F (Pyflakes), E/W (pycodestyle), I (isort), TID (flake8-tidy-imports)
+select = ["E", "W", "F", "I", "TID"]
+
+[tool.black]
+# Configuration for the Black code formatter.
+line-length = 88
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+
+[tool.mypy]
+# Configuration for the MyPy type checker.
+python_version = "3.8"
+warn_return_any = true
+ignore_missing_imports = true
+
